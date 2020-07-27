@@ -3,6 +3,7 @@ var express = require('express');
 var app = express();
 var dotenv = require('dotenv');
 dotenv.config();
+var bodyParser = require('body-parser');
 
 // --> 7)  Mount the Logger middleware here
 app.use(function(req, res, next) {
@@ -11,7 +12,7 @@ app.use(function(req, res, next) {
 });
 
 // --> 11)  Mount the body-parser middleware  here
-
+app.use(bodyParser.urlencoded({extended: false}));
 
 /** 1) Meet the node console. */
 console.log('Hello World');
