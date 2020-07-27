@@ -71,6 +71,10 @@ app.get('/name', function(req, res) {
     res.json({
         name: `${req.query.first} ${req.query.last}`
     });
+}).post('/name', function(req, res) {
+    res.json({
+        name: `${req.body.first} ${req.body.last}`
+    });
 });
   
 /** 11) Get ready for POST Requests - the `body-parser` */
